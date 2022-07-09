@@ -1,5 +1,7 @@
 package algorithms.treetraversal;
 
+import java.util.ArrayList;
+
 public class BinarySearchTree {
     private Node root;
 
@@ -12,16 +14,22 @@ public class BinarySearchTree {
         return true;
     }
 
-    public void inOrderTraversal() {
-        inOrderTraversal(root);
+    public ArrayList<Integer> inOrderTraversal() {
+        ArrayList<Integer> output = new ArrayList<>();
+        inOrderTraversal(root, output);
+        return output;
     }
 
-    public void postOrderTraversal() {
-        postOrderTraversal(root);
+    public ArrayList<Integer> postOrderTraversal() {
+        ArrayList<Integer> output = new ArrayList<>();
+        postOrderTraversal(root, output);
+        return output;
     }
 
-    public void preOrderTraversal() {
-        preOrderTraversal(root);
+    public ArrayList<Integer> preOrderTraversal() {
+        ArrayList<Integer> output = new ArrayList<>();
+        preOrderTraversal(root, output);
+        return output;
     }
 
     private Node insert(Node node, int data) {
@@ -42,28 +50,28 @@ public class BinarySearchTree {
         return node;
     }
 
-    private void inOrderTraversal(Node node) {
+    private void inOrderTraversal(Node node, ArrayList<Integer> output) {
         if (node != null) {
-            inOrderTraversal(node.left);
-            System.out.println(node.data);
-            inOrderTraversal(node.right);
+            inOrderTraversal(node.left, output);
+            output.add(node.data);
+            inOrderTraversal(node.right, output);
         }
     }
 
-    private void preOrderTraversal(Node node) {
+    private void preOrderTraversal(Node node, ArrayList<Integer> output) {
         if (node != null) {
-            System.out.println(node.data);
-            inOrderTraversal(node.left);
-            inOrderTraversal(node.right);
+            output.add(node.data);
+            preOrderTraversal(node.left, output);
+            preOrderTraversal(node.right, output);
         }
     }
 
-    private void postOrderTraversal(Node node) {
+    private void postOrderTraversal(Node node, ArrayList<Integer> output) {
 
         if (node != null) {
-            inOrderTraversal(node.left);
-            inOrderTraversal(node.right);
-            System.out.println(node.data);
+            postOrderTraversal(node.left, output);
+            postOrderTraversal(node.right, output);
+            output.add(node.data);
         }
     }
 
