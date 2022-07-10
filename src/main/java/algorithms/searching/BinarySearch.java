@@ -1,8 +1,14 @@
 package algorithms.searching;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class BinarySearch {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(BinarySearch.class);
+
     public int recursiveBinarySearch(int search, int[] input, int left, int right) {
+        LOGGER.info("Inside Recursive Binary Search operation");
 
         if (right >= left && left <= input.length - 1) {
             int mid = left + (right - left) / 2;
@@ -18,6 +24,7 @@ public class BinarySearch {
     }
 
     public int iterativeBinarySearch(int search, int[] input) {
+        LOGGER.info("Inside Iterative Binary Search Operation");
         int left = 0, right = input.length - 1;
         while (left <= right) {
             int mid = left + (right - left) / 2;

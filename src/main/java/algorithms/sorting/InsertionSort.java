@@ -1,11 +1,17 @@
 package algorithms.sorting;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class InsertionSort {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(InsertionSort.class);
 
     // Time Complexity : O(n^2)
     // Space Complexity: O(1)
 
     public int[] insertionSort(int[] arr) {
+        LOGGER.info("Performing insertion sort for the given input.");
         int length = arr.length;
         for (int left = 1; left < length; ++left) {
             int value = arr[left];

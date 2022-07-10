@@ -1,11 +1,16 @@
 package algorithms.sorting;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class MergeSort {
+    private static Logger logger = LoggerFactory.getLogger(MergeSort.class);
 
     // Time Complexity: O(nLogn)
     // Space Complexity: O(n)
 
     public void mergeSort(int[] input, int length) {
+        logger.info("Inside mergesort method");
         if (length < 2) {
             return;
         }
@@ -26,6 +31,7 @@ public class MergeSort {
     }
 
     public void merge(int[] subArray, int[] leftArray, int[] rightArray, int left, int right) {
+        logger.info("Performing Merge operation");
 
         int i = 0, j = 0, k = 0;
 
