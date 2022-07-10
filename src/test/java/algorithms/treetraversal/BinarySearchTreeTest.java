@@ -31,12 +31,12 @@ class BinarySearchTreeTest {
 
         Integer[] preorderArray = {52,15,9,3,10,16,56,54,61};
         List<Integer> expectedPreorder = Arrays.asList(preorderArray);
-        result = bst.preOrderTraversal();//output [52,15,9,3,10,16,56,54,61]
+        result = bst.preOrderTraversal();
         assertEquals(expectedPreorder, result);
 
         Integer[] postOrderArray= {3,10,9,16,15,54,61,56,52};
         List<Integer> expectedPostOrder = Arrays.asList(postOrderArray);
-        result = bst.postOrderTraversal(); //output [3,10,9,16,15,54,61,56,52]
+        result = bst.postOrderTraversal();
         assertEquals(expectedPostOrder, result);
     }
 }
