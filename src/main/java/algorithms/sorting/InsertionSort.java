@@ -7,9 +7,6 @@ public class InsertionSort {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(InsertionSort.class);
 
-    // Time Complexity : O(n^2)
-    // Space Complexity: O(1)
-
     public int[] insertionSort(int[] arr) {
         LOGGER.info("Performing insertion sort for the given input.");
         int length = arr.length;
